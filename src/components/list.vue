@@ -8,7 +8,9 @@
   >
     <template slot="category" slot-scope="record">
       <div>
-        {{ productTypeList[record-1] ? productTypeList[record-1].name :" " }}
+        {{
+          productTypeList[record - 1] ? productTypeList[record - 1].name : " "
+        }}
       </div>
     </template>
     <template slot="status" slot-scope="record">
@@ -86,28 +88,31 @@ export default {
       },
     };
   },
-  computed: mapState("product", ["productTypeList","productList"]),
+  computed: mapState("product", ["productTypeList", "productList"]),
   async created() {
-    this.$store.dispatch("product/getProductList",)
+    this.$store.dispatch("product/getProductList");
   },
   methods: {
     handleTableChange() {},
     edit(product) {
       this.$router.push({
-        path:`/goods/edit/${product.id}`
+        path: `/goods/edit/${product.id}`,
       });
     },
     onChange(pageNumber) {
-      this.$emit("changePage",pageNumber);
+      this.$emit("changePage", pageNumber);
       this.pagination = pageNumber;
     },
-    remove(id){
-      this.$api.remove(id).then(()=>{
-        this.$store.dispatch("product/getProductList");
-      },(error)=>{
-        alert(error);
-      });
-    }
+    remove(id) {
+      this.$api.remove(id).then(
+        () => {
+          this.$store.dispatch("product/getProductList");
+        },
+        (error) => {
+          alert(error);
+        }
+      );
+    },
   },
 };
 </script>

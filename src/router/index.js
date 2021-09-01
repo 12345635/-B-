@@ -9,6 +9,10 @@ import Loading from '@/views/Loading'
 import Statistics from '@/views/Page/Statistics'
 import GoodsList from '@/views/Page/goods/Goodslist'
 
+if(!window.Vue){
+  Vue.use(VueRouter);
+}
+
 Vue.use(VueRouter)
 
 let routes = [
@@ -140,7 +144,7 @@ routes = [
   ...asyncRouterMap
 ]
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes,
 })

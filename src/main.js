@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VCharts from 'v-charts'
+// import VCharts from 'v-charts'
 import App from './App.vue'
 import store from './store'
 import router from './router'
@@ -10,7 +10,7 @@ import cookie from "@/utils/cookie"
 store.dispatch("isLogin/howMI");
 
 Vue.use(Antd);
-Vue.use(VCharts);
+// Vue.use(VCharts);
 import API from "@/api"
 Vue.prototype.$api = API;
 Vue.prototype.$cookie = cookie;

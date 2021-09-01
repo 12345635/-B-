@@ -67,6 +67,9 @@ export default {
                 commit('setLoading');
                 return true
             }
+            else{
+                return false
+            }
         },
         async login({ commit }, p) {
             commit("setLoading", true);
@@ -102,7 +105,7 @@ export default {
                 meunArray = routes.filter((r) => {
                     if (r.children) {
                         r.children = r.children.filter((r) => {
-                            return r.name == getmeuns(r.name, state.coustomerMeuns)&&!r.hidden
+                            return r.name == getmeuns(r.name, state.coustomerMeuns) && !r.hidden
                         })
                         return !r.hidden
                     } else {

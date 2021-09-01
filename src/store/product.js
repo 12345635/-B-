@@ -77,7 +77,7 @@ export default {
     setProduct({ commit }, p) {
       commit("setForm", p)
     },
-    resetProduct({commit},p){
+    resetProduct({ commit }, p) {
       commit("resetForm", p)
     }
   },

@@ -68,18 +68,18 @@
       </div>
     </a-form-model-item>
     <a-form-model-item :wrapper-col="{ span: 24, offset: 10 }">
-        <a-button v-if="current > 0" style="margin-left: 8px" @click="prev">
-          上一页
-        </a-button>
-        <a-button
-          v-if="current == steps.length - 1"
-          style="margin-left: 8px"
-          type="primary"
-          @click="onSubmit"
-        >
-          提交
-        </a-button>
-      </a-form-model-item>
+      <a-button v-if="current > 0" style="margin-left: 8px" @click="prev">
+        上一页
+      </a-button>
+      <a-button
+        v-if="current == steps.length - 1"
+        style="margin-left: 8px"
+        type="primary"
+        @click="onSubmit"
+      >
+        提交
+      </a-button>
+    </a-form-model-item>
   </a-form-model>
 </template>
 <script>
